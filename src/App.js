@@ -1,14 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.css";
 import restaurant from "./restaurant.jpg"
-
-function SecretComponent() {
-  return <h1> A secret component just for authorized users</h1>
-}
-
-function RegularComponent() {
-  return <h1> A regular component for all users</h1>
-}
 
 function Header(props) {
   return (
@@ -49,17 +41,18 @@ const categories = [
 
 const categoriesObjects = categories.map((category, i) => ({ id: i, title: category }));
 
-function App(props) {
-  if (props.authorized) {
-    return (
-      <div className="App">
-        {props.authorized ? <SecretComponent /> : <RegularComponent />}
-        <Header name="Cindy" />
-        <MainSection adjective="amazing" categories={categoriesObjects} />
-        <Footer year={new Date().getFullYear()} />
-      </div>
-    )
-  }
+function App() {
+  const [emotion, setEmotion] = useState("happy");
+
+  return (
+    <div className="App">
+      <Header name="Cindy" />
+      <MainSection adjective="amazing" categories={categoriesObjects} />
+      <h1>Current emotion is {emotion}</h1>
+      <button onClick={() => setEmotion("frustrated")}>Frustrate</button>
+      <Footer year={new Date().getFullYear()} />
+    </div>
+  )
 }
 
 export default App;
