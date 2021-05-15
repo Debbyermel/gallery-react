@@ -1,4 +1,5 @@
-import React, {useReducer, useState} from "react";
+import userEvent from "@testing-library/user-event";
+import React, {useReducer, useState, useEffect} from "react";
 import "./App.css";
 import restaurant from "./restaurant.jpg"
 
@@ -14,7 +15,7 @@ function MainSection(props) {
   return (
     <section>
       <p>Click on any of those {props.adjective} categories to start browsing</p>
-      <img src={restaurant} height={300} alt="resturante napkin and fork" />
+      <img src={restaurant} height={300} alt="restaurant napkin and fork" />
       <ul style={{ listStyle: "none" }}>
         {props.categories.map((category) => (
           <li key={category.id}>{category.title}</li>))}
@@ -41,24 +42,47 @@ const categories = [
 
 const categoriesObjects = categories.map((category, i) => ({ id: i, title: category }));
 
-function App() {
+function App({login}) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const [emotion, setEmotion] = useState("happy");
   const [checked, toggle] = useReducer(
     (checked => !checked),
     false
     );
 
-  return (
-    <div className="App">
+    useEffect(() => {
+      if(!login) return;
+      setLoading(true);
+      fetch(`http://api.github.com/users/${login}`)
+      .then(response => response.json())
+      .then(setData)
+      .then(() => setLoading(false))
+      .catch(setError);
+    }, [login]);
+
+    if(loading) return <h1>Loading...</h1>;
+    if(error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
+    if(!data) return null;
+
+    return (
+      <div>
+      <h1>{data.name}</h1>
+      <p>{data.location}</p>
+      <section className="App">
       <Header name="Cindy" />
       <MainSection adjective="amazing" categories={categoriesObjects} />
       <h1>Current emotion is {emotion}</h1>
+      <div> No data</div>
       <button onClick={() => setEmotion("frustrated")}>Frustrate</button>
       <input type="checkbox" value={checked} onChange={toggle} />
       <p>{ checked ? "checked" : "No checked" }</p>
       <Footer year={new Date().getFullYear()} />
-    </div>
-  )
+      </section>
+      </div>
+    );
 }
 
 export default App;

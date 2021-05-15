@@ -15,6 +15,6 @@ console.log(sandals);
 
 
 ReactDOM.render(
-  <App />,
+  <App login="debbyermel" />,
   document.getElementById('root')
 );
