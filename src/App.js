@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useReducer, useState} from "react";
 import "./App.css";
 import restaurant from "./restaurant.jpg"
 
@@ -43,6 +43,10 @@ const categoriesObjects = categories.map((category, i) => ({ id: i, title: categ
 
 function App() {
   const [emotion, setEmotion] = useState("happy");
+  const [checked, toggle] = useReducer(
+    (checked => !checked),
+    false
+    );
 
   return (
     <div className="App">
@@ -50,6 +54,8 @@ function App() {
       <MainSection adjective="amazing" categories={categoriesObjects} />
       <h1>Current emotion is {emotion}</h1>
       <button onClick={() => setEmotion("frustrated")}>Frustrate</button>
+      <input type="checkbox" value={checked} onChange={toggle} />
+      <p>{ checked ? "checked" : "No checked" }</p>
       <Footer year={new Date().getFullYear()} />
     </div>
   )
