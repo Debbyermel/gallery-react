@@ -70,12 +70,13 @@ function App({login}) {
     return (
       <div>
       <h1>{data.name}</h1>
+      <h2>Hello from testing</h2>
       <p>{data.location}</p>
       <section className="App">
       <Header name="Cindy" />
       <MainSection adjective="amazing" categories={categoriesObjects} />
       <h1>Current emotion is {emotion}</h1>
-      <div> No data</div>
+      <p> No data</p>
       <button onClick={() => setEmotion("frustrated")}>Frustrate</button>
       <input type="checkbox" value={checked} onChange={toggle} />
       <p>{ checked ? "checked" : "No checked" }</p>
