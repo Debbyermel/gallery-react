@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const checklist = ["sunglass", "bikini", "sandals", "sunscreen"];
 console.log(checklist[1]);
@@ -15,6 +16,8 @@ console.log(sandals);
 
 
 ReactDOM.render(
-  <App login="debbyermel" />,
+  <Router>
+    <App />,
+  </Router>,
   document.getElementById('root')
 );
