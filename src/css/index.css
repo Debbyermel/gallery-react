@@ -1,0 +1,19 @@
+body {
+  background-color: #a295cb;
+  font-weight: 200;
+}
+
+header a,
+footer a {
+  color: #ffffff;
+}
+
+footer {
+  font-size: 1rem;
+}
+
+.bg-primary,
+.btn-primary {
+  color: palevioletred;
+  border: 1px solid papayawhip;
+}

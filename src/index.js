@@ -1,19 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from "./App";
-import { BrowserRouter as Router } from "react-router-dom";
-
-const checklist = ["sunglass", "bikini", "sandals", "sunscreen"];
-console.log(checklist[1]);
-
-//array destructuring
-const [mostImportanteItem] = ["sunglass", "bikini", "sandals", "sunscreen"];
-const [, , sandals] = ["sunglass", "bikini", "sandals", "sunscreen"];
-console.log(mostImportanteItem);
-console.log(sandals);
-
-
+import 'bootstrap/dist/css/bootstrap.css';
+import './css/index.css';
+import App from './components/App';
+import { BrowserRouter as Router } from 'react-router-dom';
+import 'jquery/dist/jquery';
+import 'popper.js/dist/umd/popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 ReactDOM.render(
   <Router>
