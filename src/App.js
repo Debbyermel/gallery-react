@@ -2,7 +2,7 @@ import React from  "react";
 import "./App.css";
 import restaurant from "./restaurant.jpg"
 import { Routes, Route } from "react-router-dom";
-import { Home, About, Events, Contact } from "./pages"
+import { Home, About, Events, Contact, Woops404 } from "./pages"
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       <Route path="/about" element={<About />}/>
       <Route path="/events" element={<Events />}/>
       <Route path="/contact" element={<Contact />}/>
+      <Route path="*" element={<Woops404 />}/>
     </Routes>
     </div>
   );
