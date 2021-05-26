@@ -5,6 +5,7 @@ import { Home } from "./Home"
 import { About } from "./About"
 import { Appointments } from "./Appointments"
 import { Contact } from "./Contact"
+import { MyInfo } from "./MyInfo"
 
 function App() {
   return (
