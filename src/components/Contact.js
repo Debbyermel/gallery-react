@@ -1,11 +1,15 @@
 import React from 'react';
+import ContactCard from './ContacCard';
 
-function Contact() {
+export default function Contact() {
   return(
     <div>
-      <h1> Contact Us!!</h1>
+      <ContactCard
+        contact={{name:"Mr. Whiskerson", imgUrl: "http://placekitten.com/300/200", phone: "(122) 555-123-123", email:"whiskerson@catnap.meow" }}
+      />
+      <ContactCard
+        contact={{name: "Flufykin", imgUrl: "http://placekitten.com/400/200", phone: "(122) 555-345-123", email:"flufy@me.meow" }}
+      />
     </div>
   )
 }
-
-export default Contact;

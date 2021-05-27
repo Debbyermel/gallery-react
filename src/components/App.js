@@ -6,7 +6,6 @@ import Nav from "./Nav"
 // import About from "./About"
 // import Contact from "./Contact"
 // import Appointments from "./Appointments"
-// import MyInfo from "./MyInfo"
 import Footer from "./Footer"
 
  export default function App() {
