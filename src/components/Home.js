@@ -7,7 +7,6 @@ import jokesData from "./jokesData";
 export default function Home () {
   const jokeComponents = jokesData.map(joke => <Jokes key={joke.id} question={joke.question} punchLine={joke.punchLine} />)
 
-
   return(
     <main className="page bg-white" id="petratings">
       <div className="container">
@@ -16,7 +15,7 @@ export default function Home () {
           <div className="cards">
              {jokeComponents}
           </div>
-          <Contact/>
+          <Contact />
         </div>
       </div>
     </main>

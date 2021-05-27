@@ -1,6 +1,7 @@
 import React from 'react';
+import todoData from './todoData';
 
-export default function TodoItem() {
+export default function TodoItem(props) {
   const date = new Date();
   const hours = date.getHours();
   let timeOfDay;
@@ -23,9 +24,12 @@ export default function TodoItem() {
   }
   return (
     <div className="todo-item">
-      <input type="checkbox" />
-      <p style={styles}>Good {timeOfDay}</p>
+      <input type="checkbox" checked={props.completed}/>
+      {/* <p style={styles}>Good {timeOfDay}</p> */}
+      <p>{props.text}</p>
     </div>
   )
 }
+
+
 
