@@ -1,22 +1,14 @@
-import React, {Component} from 'react';
-import {Link} from "react-router-dom";
+import React from 'react';
+import Todo from './Todo';
 
-class Home extends Component {
-  render() {
-    return(
-      <main className="page bg-white" id="petratings">
-        <div className="container">
-          <div className="row">
-            <nav>
-              <Link to="about"> About </Link>
-              <Link to="appointments"> Make Appointment</Link>
-              <Link to="contact"> Contact </Link>
-            </nav>
-          </div>
+export default function Home(){
+  return(
+    <main className="page bg-white" id="petratings">
+      <div className="container">
+        <div className="row">
+          <Todo />
         </div>
+      </div>
     </main>
-    )
-  }
+  )
 }
-
-export default Home;

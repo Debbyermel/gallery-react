@@ -1,4 +1,4 @@
-import React from "react";
+import React, {component} from "react";
 
 function MyInfo() {
   return(
@@ -11,4 +11,4 @@ function MyInfo() {
   )
 }
 
-export default MyInfo;
+export default MyInfo

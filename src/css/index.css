@@ -3,6 +3,10 @@ body {
   font-weight: 200;
 }
 
+main {
+  height: 600px;
+}
+
 header a,
 footer a {
   color: #ffffff;
@@ -16,4 +20,19 @@ footer {
 .btn-primary {
   color: palevioletred;
   border: 1px solid papayawhip;
+}
+
+.navigation ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
 }
