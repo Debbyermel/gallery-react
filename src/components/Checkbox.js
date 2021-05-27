@@ -1,6 +1,6 @@
 import React, {useReducer} from "react";
 
-export function Checkbox() {
+export default function Checkbox() {
   const [checked, toggle] = useReducer(
     (checked) => !checked,
     false
