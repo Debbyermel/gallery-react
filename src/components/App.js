@@ -1,4 +1,4 @@
-import React from  "react";
+import React, {Component}  from  "react";
 import '../css/App.css';
 
 import Home from "./Home"
@@ -8,15 +8,19 @@ import Nav from "./Nav"
 // import Appointments from "./Appointments"
 import Footer from "./Footer"
 
- export default function App() {
-  return (
-    <div>
-      <Nav />
-      <Home />
-      <Footer />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Nav />
+        <Home />
+        <Footer />
+      </div>
+    );
+  }
 }
+
+export default App;
 
 
 
