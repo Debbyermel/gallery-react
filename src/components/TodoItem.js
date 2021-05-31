@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import todoData from './todoData';
 
 class TodoItem extends Component {
   render() {
@@ -24,9 +23,13 @@ class TodoItem extends Component {
       styles.color = "#000"
     }
 
+    function handleChange (e) {
+      console.log('handle change called')
+   }
+
     return (
       <div className="todo-item">
-        <input type="checkbox" checked={this.props.completed}/>
+        <input type="checkbox" checked={this.props.completed} onChange={handleChange}/>
         {/* <p style={styles}>Good {timeOfDay}</p> */}
         <p>{this.props.text}</p>
       </div>
